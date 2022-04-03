@@ -6,6 +6,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//Template Engine Config
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    // The render method takes the name of the HTML
+    // page to be rendered as input
+    // This page should be in the views folder
+    // in the root directory.
+    res.render('home');
+});
+
 //static acts on the first instance of index within the public folder
 app.use(express.static('./public'));
 
