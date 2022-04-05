@@ -38,23 +38,38 @@ app.get('/sign-up', (req, res) => {
 })
 
 // post methods
+//need to add a uniqure clause to the email
 app.post('/sign-up', async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const userName = req.body.email;
     const password = req.body.password;
     const hash = await bcyrpt.hash(password, saltRounds)
-    console.log(hash)
-    console.log(userName)
+    // console.log(hash)
+    // console.log(userName)
 
-    models.user.create({useremail: userName, userpassword: hash}).then((newUser) => {
-        console.log(newUser)
+    models.user.create({ useremail: userName, userpassword: hash }).then((newUser) => {
+        // console.log(newUser)
         res.render('home');
     })
 });
 
-app.post('/sign-in', (req, res) => {
-    console.log(req.body);
+app.post('/sign-in', async (req, res) => {
+    // console.log(req.body);
+    const userName = req.body.email;
+    const password = req.body.password;
+    const foundUser = await models.user.findOne({ where: { useremail: userName }, raw: true });
+    console.log(foundUser)
+    if (!foundUser) {
+        return res.json({ errors: 'invalid user email' });
+    }
+
+    // here password which is equal to what the user created in sign-up, is being compared to the hash from the user table under user password
+    const correctPassword = await bcyrpt.compare(password, foundUser.userpassword)
+    console.log(correctPassword)
+
     res.render('home');
+
+
 });
 
 // the server and port
