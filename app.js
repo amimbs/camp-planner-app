@@ -49,6 +49,8 @@ app.post('/sign-up', async (req, res) => {
 
     models.user.create({ useremail: userName, userpassword: hash }).then((newUser) => {
         // console.log(newUser)
+
+        // this needs to be a res.json
         res.render('home');
     })
 });
@@ -67,6 +69,7 @@ app.post('/sign-in', async (req, res) => {
     const correctPassword = await bcyrpt.compare(password, foundUser.userpassword)
     console.log(correctPassword)
 
+    //this needs to be a res.json
     res.render('home');
 
 

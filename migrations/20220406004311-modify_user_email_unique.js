@@ -1,7 +1,14 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
+    return queryInterface.addConstraint(
+      'users', {
+      fields: ['useremail'],
+      type: 'unique',
+      name: 'unique_constraint_email'
+    });
+
     /**
      * Add altering commands here.
      *
@@ -10,7 +17,7 @@ module.exports = {
      */
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add reverting commands here.
      *
