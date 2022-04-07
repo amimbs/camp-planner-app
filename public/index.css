@@ -1,0 +1,140 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    align-content: center;
+    background-color: black;
+  }
+
+  .row.content {
+      height: 450px;
+  }
+
+  .sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+    .row.content {
+        height:auto;
+  } 
+
+  img {
+      height: 10vh;
+      width: auto;
+  }
+
+  .card-group {
+    display: flex;
+  }
+
+  .card {
+    padding: 2rem;
+    border: 1px solid rgba(53, 53, 53, 0.363);
+    width: auto;
+    margin: 0;
+  }
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+
+  .btn-primary {
+    background: #4ac7be;
+    border: none;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    font: 300 16px/1.5 'Roboto', sans-serif;
+    transition: background 0.3s linear;
+  }
+  
+  .btn-primary:hover {
+    background: #097fb7;
+  }
+  
+  .btn-icon {
+    background: none;
+    border: none;
+    display: inline-block;
+    vertical-align: top;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s linear, color 0.3s linear;
+  }
+  
+  .btn-icon:focus {
+    outline: none;
+  }
+  
+  .btn-icon:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+  
+  .btn-icon.remove:before {
+    content: 'f2ed';
+  }
+  
+  .btn-icon.down:before {
+    content: 'f063';
+  }
+  
+  .btn-icon.up:before {
+    content: 'f062';
+  }
+
+  .formHolder {
+    margin: 0 -5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .formHolder .col {
+    float: left;
+    width: 20%;
+    padding: 0 5px;
+  }
+  
+  .formHolder .col.big {
+    width: 60%;
+  }
+
+  .listHolder li {
+    counter-increment: step-counter;
+    overflow: hidden;
+    padding: 0 0 20px 30px;
+    position: relative;
+  }
+  
+  .listHolder li:before {
+    content: counter(step-counter);
+    background: #4ac7be;
+    color: #fff;
+    font-size: 14px;
+    padding: 0px 6px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .listHolder .listName {
+    float: left;
+  }
+  
+  .listHolder .btn-icon {
+    float: right;
+    margin: 0 0 0 20px;
+  }
