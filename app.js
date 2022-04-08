@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     // page to be rendered as input
     // This page should be in the views folder
     // in the root directory.
-    res.render('home');
+    res.render('dashboard');
 });
 
 app.get('/sign-in', (req, res) => {
@@ -49,7 +49,7 @@ app.post('/sign-up', async (req, res) => {
 
     models.user.create({ useremail: userName, userpassword: hash }).then((newUser) => {
         // console.log(newUser)
-        res.render('home');
+        res.render('dashboard');
     })
 });
 
@@ -67,7 +67,7 @@ app.post('/sign-in', async (req, res) => {
     const correctPassword = await bcyrpt.compare(password, foundUser.userpassword)
     console.log(correctPassword)
 
-    res.render('home');
+    res.render('dashboard');
 
 
 });
