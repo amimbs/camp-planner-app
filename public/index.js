@@ -1,69 +1,142 @@
-const divList = document.querySelector('.listHolder');
-const addInput = document.querySelector('#addInput');
-const addBtn = document.querySelector('#addBtn');
+//This Gear List
+const geardivList = document.querySelector('.gearlistholder');
+const addGearInput = document.querySelector('#addGearInput');
+const addGearBtn = document.querySelector('#addGearBtn');
 
-function addLists() {
-    if (addInput.value === '') {
+function gearaddLists() {
+    if (addGearInput.value === '') {
         alert('Enter the list name please!!!');
     } else {
-        const ul = divList.querySelector('ul');
-        const li = document.createElement('li');
-        li.innerHTML = addInput.value;
-        addInput.value = '';
-        ul.appendChild(li);
-        createBtn(li);
+        const gearul = geardivList.querySelector('ul');
+        const gearli = document.createElement('li');
+        gearli.innerHTML = addGearInput.value;
+        addGearInput.value = '';
+        gearul.appendChild(gearli);
+        gearcreateBtn(gearli);
     }
 }
 
-addBtn.addEventListener('click', () => {
-    addLists();
+addGearBtn.addEventListener('click', () => {
+    gearaddLists();
 });
 
-addInput.addEventListener('keyup', (event) => {
+addGearInput.addEventListener('keyup', (event) => {
     if (event.which === 13) {
-        addLists();
+        gearaddLists();
     }
 });
 
-const listUl = document.querySelector('.list');
-const lis = listUl.children;
+const gearlistUl = document.querySelector('.gearlist');
+const gearlis = gearlistUl.children;
 
-function createBtn(li) {
-    const remove = document.createElement('button');
-    remove.className = 'btn-icon remove';
-    li.appendChild(remove);
+function gearcreateBtn(gearli) {
+    const gearremove = document.createElement('button');
+    gearremove.className = 'gear-btn-icon remove';
+    gearli.appendChild(gearremove);
 
-    const down = document.createElement('button');
-    down.className = 'btn-icon down';
-    li.appendChild(down);
+    const geardown = document.createElement('button');
+    geardown.className = 'gear-btn-icon down';
+    gearli.appendChild(geardown);
 
-    const up = document.createElement('button');
-    up.className = 'btn-icon up';
-    li.appendChild(up);
+    const gearup = document.createElement('button');
+    gearup.className = 'gear-btn-icon up';
+    gearli.appendChild(gearup);
 
-    return li;
+    return gearli;
 }
 
-for (var i = 0; i < lis.length; i++) {
-    createBtn(lis[i]);
+for (var i = 0; i < gearlis.length; i++) {
+    gearcreateBtn(gearlis[i]);
 }
 
-divList.addEventListener('click', (event) => {
+geardivList.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
-        const button = event.target;
-        const li = button.parentNode;
-        const ul = li.parentNode;
-        if (button.className === 'btn-icon remove') {
-            ul.removeChild(li);
-        } else if (button.className === 'btn-icon down') {
-            const nextLi = li.nextElementSibling;
-            if (nextLi) {
-                ul.insertBefore(nextLi, li);
+        const gearbutton = event.target;
+        const gearli = gearbutton.parentNode;
+        const gearul = gearli.parentNode;
+        if (gearbutton.className === 'gear-btn-icon remove') {
+            gearul.removeChild(gearli);
+        } else if (gearbutton.className === 'gear-btn-icon down') {
+            const gearnextLi = gearli.nextElementSibling;
+            if (gearnextLi) {
+                gearul.insertBefore(gearnextLi, gearli);
             }
-        } else if (button.className === 'btn-icon up') {
-            const prevLi = li.previousElementSibling;
-            if (prevLi) {
-                ul.insertBefore(li, prevLi);
+        } else if (gearbutton.className === 'gear-btn-icon up') {
+            const gearprevLi = gearli.previousElementSibling;
+            if (gearprevLi) {
+                gearul.insertBefore(gearli, gearprevLi);
+            }
+        }
+    }
+})
+
+//This is for Grocery Card
+const grodivList = document.querySelector('.grolistholder');
+const addgroInput = document.querySelector('#addgroInput');
+const addgroBtn = document.querySelector('#addgroBtn');
+
+function groaddLists() {
+    if (addgroInput.value === '') {
+        alert('Enter the list name please!!!');
+    } else {
+        const groul = grodivList.querySelector('ul');
+        const groli = document.createElement('li');
+        groli.innerHTML = addgroInput.value;
+        addgroInput.value = '';
+        groul.appendChild(groli);
+        grocreateBtn(groli);
+    }
+}
+
+addgroBtn.addEventListener('click', () => {
+    groaddLists();
+});
+
+addgroInput.addEventListener('keyup', (event) => {
+    if (event.which === 13) {
+        groaddLists();
+    }
+});
+
+const grolistUl = document.querySelector('.grolist');
+const grolis = grolistUl.children;
+
+function grocreateBtn(groli) {
+    const groremove = document.createElement('button');
+    groremove.className = 'gro-btn-icon remove';
+    groli.appendChild(groremove);
+
+    const grodown = document.createElement('button');
+    grodown.className = 'gro-btn-icon down';
+    groli.appendChild(grodown);
+
+    const group = document.createElement('button');
+    group.className = 'gro-btn-icon up';
+    groli.appendChild(group);
+
+    return groli;
+}
+
+for (var i = 0; i < grolis.length; i++) {
+    grocreateBtn(grolis[i]);
+}
+
+grodivList.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        const grobutton = event.target;
+        const groli = grobutton.parentNode;
+        const groul = groli.parentNode;
+        if (grobutton.className === 'gro-btn-icon remove') {
+            groul.removeChild(gearli);
+        } else if (grobutton.className === 'gro-btn-icon down') {
+            const gronextLi = groli.nextElementSibling;
+            if (gronextLi) {
+                groul.insertBefore(gronextLi, groli);
+            }
+        } else if (grobutton.className === 'gro-btn-icon up') {
+            const groprevLi = groli.previousElementSibling;
+            if (groprevLi) {
+                groul.insertBefore(groli, groprevLi);
             }
         }
     }
