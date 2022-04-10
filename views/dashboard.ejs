@@ -79,17 +79,18 @@
               <h4 class="card-title"><b>Gear list</b></h4>
               <p class="card-text">Lets add you some Gear!</p>
             </div>
-            <div class="listHolder">
-              <ul class="list">
-
+            <div class="gearlistholder">
+              <ul class="gearlist col-6">
+                <span class="listname">amazon firstick</span>
+             <!-- <button class="btn-icon up"></button>
+                  <button class="btn-icon down"></button>
+                  <button class="btn-icon remove"></button> -->
               </ul>
             </div>
-            <div class="formHolder">
-              <div class="col big">
-                <input type="text" id="addInput">
-              </div>
-              <div class="col">
-                <button type="button" id="addBtn" class="btn btn-primary">Add Item</button>
+            <div class="gearformHolder">
+              <div class="col-12">
+                <input type="text" id="addGearInput">
+                <button type="button" id="addGearBtn" class="btn btn-primary">Add Item</button>
               </div>
             </div>
           </div>
@@ -97,13 +98,17 @@
             <div class="card-body">
               <h5 class="card-title"><b>Grocery Items</b></h5>
               <p class="card-text">Add you grocery items here!</p>
-              <form id="add-item-form">
-                <div class="input-group input-group">
-                  <input name="add-item" id="add-text" class="form-control add-item"
-                    placeholder="Add Your Items Here" />
-                  <a href="#" class="btn btn-primary" type="submit">Add to List</a>
+              <div class="grolistHolder">
+                <ul class="grolist col-6">
+                    <span class="listitem">Beef Jerky</span>
+                </ul>
+              </div>
+              <div class="groformHolder">
+                <div class="col big">
+                  <input type="text" id="addgroInput">
+                  <button type="button" id="addgroBtn" class="btn btn-primary">Add Item</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
           <hr>
