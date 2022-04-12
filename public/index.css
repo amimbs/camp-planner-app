@@ -167,3 +167,70 @@ body {
     white-space: nowrap;
     float: right;
   }
+
+/* This is for the Camp Site */
+
+input.addcampBtn[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  transition: border 0.3s linear;
+}
+
+.addcampBtn {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+  width: 100%;
+}
+
+.camp-btn-icon.remove:before {
+  content: 'X';
+}
+
+.camp-btn-icon.down:before {
+  content: 'DOWN';
+}
+
+.camp-btn-icon.up:before {
+  content: 'UP'; 
+}
+
+.campformHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.campformHolder .col.big {
+  width: 100%;
+}
+
+.camplistHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.camplistHolder li:before {
+  content: counter(step-counter);
+  background: #fcac00;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.camplistHolder .camp-btn-icon {
+  white-space: nowrap;
+  float: right;
+}

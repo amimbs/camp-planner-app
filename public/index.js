@@ -1,3 +1,7 @@
+//This is our Camp site Card
+
+
+
 //This Gear List
 const geardivList = document.querySelector('.gearlistholder');
 const addGearInput = document.querySelector('#addGearInput');
@@ -141,3 +145,11 @@ grodivList.addEventListener('click', (event) => {
         }
     }
 });
+
+// This is for the saving adventure button
+
+// const savedPage = localstorage.getItem("campplan");
+
+// function campplan() {
+//     const plan = document.getElementById("save")
+// }
