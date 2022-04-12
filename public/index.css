@@ -1,3 +1,6 @@
+body {
+  background-color: #4B6B0A;
+}
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
@@ -12,11 +15,10 @@
   .sidenav {
     padding-top: 20px;
     background-color: #f1f1f1;
-    height: 100%;
+    height: fit-content;
+    background-color: #b4b4b4;
+    margin-top: 5px;
   }
-    .row.content {
-        height:auto;
-  } 
 
   img {
       height: 10vh;
@@ -28,76 +30,65 @@
   }
 
   .card {
-    padding: 2rem;
+    background-color: #b4b4b4;
+    padding: 1.5rem;
     border: 1px solid rgba(53, 53, 53, 0.363);
-    width: auto;
-    margin: 0;
+    width: 33%;
+    margin: 3px;
   }
 
-  input[type="text"] {
+   input.addgearBtn[type="text"] {
     width: 100%;
-    height: 40px;
+    height: 30px;
     border: 1px solid #ccc;
     background: #fff;
     padding: 10px;
-    font: 300 16px/1.5 'Roboto', sans-serif;
     transition: border 0.3s linear;
   }
-  
-  input[type="text"]:focus {
-    border-color: #4a56c7;
-    outline: none;
-  }
 
-  .addBtn {
-    padding: 10px;
+/* This is for the Gear List */
+  .addgearBtn {
+    padding: 5px;
     background: #d9d9d9;
     color: #555;
-    float: left;
     text-align: center;
     font-size: 16px;
     border-radius: 0;
   }
   
-  .btn-icon.remove:before {
+  .gear-btn-icon.remove:before {
     content: 'X';
   }
   
-  .btn-icon.down:before {
+  .gear-btn-icon.down:before {
     content: 'DOWN';
   }
   
-  .btn-icon.up:before {
-    content: 'UP';
+  .gear-btn-icon.up:before {
+    content: 'UP'; 
   }
 
-  .formHolder {
-    margin: 0 -5px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .formHolder .col {
+  .gearformHolder .col {
     float: left;
     width: 20%;
     padding: 0 5px;
   }
   
-  .formHolder .col.big {
-    width: 60%;
+  .gearformHolder .col.big {
+    width: 100%;
   }
 
-  .listHolder li {
+  .gearlistholder li {
     counter-increment: step-counter;
     overflow: hidden;
     padding: 0 0 20px 30px;
     position: relative;
+    width: 100%;
   }
   
-  .listHolder li:before {
+  .gearlistholder li:before {
     content: counter(step-counter);
     background: #fcac00;
-    color: #fff;
     font-size: 14px;
     padding: 0px 6px;
     border-radius: 3px;
@@ -106,11 +97,140 @@
     left: 0;
   }
   
-  .listHolder .listName {
-    float: left;
+  .gearlistholder .gear-btn-icon {
+    white-space: nowrap;
+    float: right;
+  }
+
+  /* This is for the Grocery List */
+  input.addgroBtn[type="text"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    transition: border 0.3s linear;
+  }
+
+  .addgroBtn {
+    padding: 5px;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0;
+    width: 100%;
   }
   
-  .listHolder .btn-icon {
-    float: right;
-    margin: 0 0 0 20px;
+  .gro-btn-icon.remove:before {
+    content: 'X';
   }
+  
+  .gro-btn-icon.down:before {
+    content: 'DOWN';
+  }
+  
+  .gro-btn-icon.up:before {
+    content: 'UP'; 
+  }
+
+  .groformHolder .col {
+    float: left;
+    width: 20%;
+    padding: 0 5px;
+  }
+  
+  .groformHolder .col.big {
+    width: 100%;
+  }
+
+  .grolistHolder li {
+    counter-increment: step-counter;
+    overflow: hidden;
+    padding: 0 0 20px 30px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .grolistHolder li:before {
+    content: counter(step-counter);
+    background: #fcac00;
+    font-size: 14px;
+    padding: 0px 6px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .grolistHolder .gro-btn-icon {
+    white-space: nowrap;
+    float: right;
+  }
+
+/* This is for the Camp Site */
+
+input.addcampBtn[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  transition: border 0.3s linear;
+}
+
+.addcampBtn {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+  width: 100%;
+}
+
+.camp-btn-icon.remove:before {
+  content: 'X';
+}
+
+.camp-btn-icon.down:before {
+  content: 'DOWN';
+}
+
+.camp-btn-icon.up:before {
+  content: 'UP'; 
+}
+
+.campformHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.campformHolder .col.big {
+  width: 100%;
+}
+
+.camplistHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.camplistHolder li:before {
+  content: counter(step-counter);
+  background: #fcac00;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.camplistHolder .camp-btn-icon {
+  white-space: nowrap;
+  float: right;
+}

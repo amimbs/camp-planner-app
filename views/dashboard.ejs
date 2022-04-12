@@ -44,9 +44,9 @@
     <div class="row content">
       <div class="col-sm-2 sidenav">
         <h4>Saved a trail or campsite</h4>
-        <p><a href="#">Hike 1</a></p>
-        <p><a href="#">Hike 2</a></p>
-        <p><a href="#">Hike 3</a></p>
+        <p><a href="#">Camp Plan 1</a></p>
+        <p><a href="#">Camp Plan 2</a></p>
+        <p><a href="#">Camp Plan 3</a></p>
       </div>
       <div class="col-sm-10 text-left">
         <h1>Welcome</h1>
@@ -64,12 +64,12 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"><b>Camp Sites</b></h5>
-              <p class="card-text">Add your camp site here!</p>
+              <p class="card-text">Where would you like to Go!</p>
               <form id="add-item-form">
                 <div class="input-group input-group">
-                  <input name="add-item" id="add-text" class="form-control add-item"
-                    placeholder="Add Your Items Here" />
-                  <a href="#" class="btn btn-primary" type="onsubmit">Add to List</a>
+                  <input name="add-item" id="camp_site" class="form-control add-item"
+                    placeholder="Add Your Adventure Here" />
+                  <a href="#" class="btn btn-primary" type="onclick">Add to List</a>
                 </div>
               </form>
             </div>
@@ -79,17 +79,18 @@
               <h4 class="card-title"><b>Gear list</b></h4>
               <p class="card-text">Lets add you some Gear!</p>
             </div>
-            <div class="listHolder">
-              <ul class="list">
-
+            <div class="gearlistholder">
+              <ul class="gearlist col-6" id="gearlist_ul">
+                
+             <!-- <button class="btn-icon up"></button>
+                  <button class="btn-icon down"></button>
+                  <button class="btn-icon remove"></button> -->
               </ul>
             </div>
-            <div class="formHolder">
-              <div class="col big">
-                <input type="text" id="addInput">
-              </div>
-              <div class="col">
-                <button type="button" id="addBtn" class="btn btn-primary">Add Item</button>
+            <div class="gearformHolder">
+              <div class="col-12">
+                <input type="text" id="addGearInput">
+                <button type="button" id="addGearBtn" class="btn btn-primary">Add Item</button>
               </div>
             </div>
           </div>
@@ -97,13 +98,17 @@
             <div class="card-body">
               <h5 class="card-title"><b>Grocery Items</b></h5>
               <p class="card-text">Add you grocery items here!</p>
-              <form id="add-item-form">
-                <div class="input-group input-group">
-                  <input name="add-item" id="add-text" class="form-control add-item"
-                    placeholder="Add Your Items Here" />
-                  <a href="#" class="btn btn-primary" type="submit">Add to List</a>
+              <div class="grolistHolder">
+                <ul class="grolist col-6" id="grolist_ul">
+                    
+                </ul>
+              </div>
+              <div class="groformHolder">
+                <div class="col big">
+                  <input type="text" id="addgroInput">
+                  <button type="button" id="addgroBtn" class="btn btn-primary">Add Item</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
           <hr>
