@@ -130,6 +130,16 @@ app.get('/dashboard', (req, res) => {
     }
 });
 
+//hook this up to a button
+app.get('/logout', (req, res) => {
+    if (req.session.user && req.cookies.user_sid) {
+        res.clearCookie('user_sid')
+        res.redirect('/sign-in')
+    } else {
+        res.redirect('/sign-in')
+    }
+});
+
 
 // the server and port
 app.listen(8080, function () {
