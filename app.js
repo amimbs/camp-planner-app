@@ -29,6 +29,7 @@ const user = require('./models/user');
 app.use(cookieParser());
 app.use(
     session({
+        key: 'user_sid',
         secret: 'unicorns',
         resave: false,
         saveUninitialized: true,
@@ -39,7 +40,30 @@ app.use(
     })
 );
 
+// cookie info
+// this clears the cookeis of the user id in the browser, should the server crash 
+app.use((req, res, next) => {
+    if (req.cookies.user_sid && !req.session.user) {
+        res.clearCookie('user_sid');
+    }
+    next();
+})
+
+//session checker to check for logged in users
+var sessionChecker = (req, res, next) => {
+    if (req.session.user && req.cookies.user_sid) {
+        res.redirect('/dashboard');
+    }else{
+
+    }
+}
+
 // get method for each template
+
+//if the server goes down, we send them back to signin
+app.get('/', sessionChecker, (req, res) => {
+    res.redirect('signIn');
+})
 
 app.get('/sign-up', (req, res) => {
     res.render('signUp');
@@ -55,7 +79,7 @@ app.post('/sign-up', async (req, res) => {
     // const userName = req.body.email;
     // const password = req.body.password;
     const { email, password, first_name, last_name } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     if (!email || !password || !first_name || !last_name) {
         res.json({ error: 'Email, password, first and last name are require' })
         return;

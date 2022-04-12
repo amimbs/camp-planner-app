@@ -1,4 +1,4 @@
-const { application } = require("express");
+// const { application } = require("express");
 
 const divList = document.querySelector('.listHolder');
 const addInput = document.querySelector('#addInput');
@@ -76,18 +76,18 @@ divList.addEventListener('click', (event) => {
 });
 
 //signin-form testing
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    fetch('/sign-in', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: e.target.email.value,
-            password: e.target.password.value
-        })
-    }).then(res => res.json()).then(data => {
-        console.log(data)
-    })
-})
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     fetch('/sign-in', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             username: e.target.email.value,
+//             password: e.target.password.value
+//         })
+//     }).then(res => res.json()).then(data => {
+//         console.log(data)
+//     })
+// })
