@@ -37,7 +37,7 @@ body {
     margin: 3px;
   }
 
-   input[type="text"] {
+   input.addgearBtn[type="text"] {
     width: 100%;
     height: 30px;
     border: 1px solid #ccc;
@@ -103,6 +103,15 @@ body {
   }
 
   /* This is for the Grocery List */
+  input.addgroBtn[type="text"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    transition: border 0.3s linear;
+  }
+
   .addgroBtn {
     padding: 5px;
     background: #d9d9d9;

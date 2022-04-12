@@ -7,7 +7,7 @@ function gearaddLists() {
     if (addGearInput.value === '') {
         alert('Enter the list name please!!!');
     } else {
-        const gearul = geardivList.querySelector('ul');
+        const gearul = geardivList.querySelector('#gearlist_ul');
         const gearli = document.createElement('li');
         gearli.innerHTML = addGearInput.value;
         addGearInput.value = '';
@@ -71,7 +71,7 @@ geardivList.addEventListener('click', (event) => {
 })
 
 //This is for Grocery Card
-const grodivList = document.querySelector('.grolistholder');
+const grodivList = document.querySelector('.grolistHolder');
 const addgroInput = document.querySelector('#addgroInput');
 const addgroBtn = document.querySelector('#addgroBtn');
 
@@ -79,7 +79,7 @@ function groaddLists() {
     if (addgroInput.value === '') {
         alert('Enter the list name please!!!');
     } else {
-        const groul = grodivList.querySelector('ul');
+        const groul = grodivList.querySelector('#grolist_ul');
         const groli = document.createElement('li');
         groli.innerHTML = addgroInput.value;
         addgroInput.value = '';
@@ -127,7 +127,7 @@ grodivList.addEventListener('click', (event) => {
         const groli = grobutton.parentNode;
         const groul = groli.parentNode;
         if (grobutton.className === 'gro-btn-icon remove') {
-            groul.removeChild(gearli);
+            groul.removeChild(groli);
         } else if (grobutton.className === 'gro-btn-icon down') {
             const gronextLi = groli.nextElementSibling;
             if (gronextLi) {
