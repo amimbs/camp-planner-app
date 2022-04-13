@@ -3,8 +3,7 @@ const saveCampsiteForm = document.getElementById('saveCampsiteForm');
 saveCampsiteForm.addEventListener('submit' , event => {
     event.preventDefault();
 
-    // let user_id = e.
-    let campSiteName = event.target.campSiteName.value
+    let campSiteName = event.target.campSiteName.value;
 
     let body = {
         name: campSiteName
@@ -17,8 +16,12 @@ saveCampsiteForm.addEventListener('submit' , event => {
         },
         body: JSON.stringify(body)
     }).then(res => res.json()).then(data => {
-        console.log(data)
+        const plansList = document.getElementById('plansList');
+        const anchor = document.createElement('a');
+        const paragraph = document.createElement('p');
 
-        // location.href = "/dashboard"
-    })
+        anchor.innerText = data.name;
+        paragraph.append(anchor);
+        plansList.append(paragraph);
+    });
 })
