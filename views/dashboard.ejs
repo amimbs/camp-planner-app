@@ -42,12 +42,18 @@
 
   <div class="container-fluid text-center">
     <div class="row content">
-      <div class="col-sm-2 sidenav">
+
+      <!-- camp plans need to render here -->
+      <div class="col-sm-2 sidenav" id="plansList">
         <h4>Saved a trail or campsite</h4>
-        <p><a href="#">Camp Plan 1</a></p>
-        <p><a href="#">Camp Plan 2</a></p>
-        <p><a href="#">Camp Plan 3</a></p>
+        <% campPlans.forEach(function(plan) { %>
+          <p>
+            <a><%= plan.name %></a>
+          </p>
+        <% }); %>
       </div>
+
+
       <div class="col-sm-10 text-left">
         <h1>Welcome</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -59,21 +65,23 @@
 
         <hr>
 
-
+        <!-- camp site card -->
         <div class="card-group">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><b>Camp Sites</b></h5>
-              <p class="card-text">Where would you like to Go!</p>
-              <form id="add-item-form">
+              <h5 class="camp-site-card"><b>Camp Sites</b></h5>
+              <p class="card-text">Where would you like to Go?</p>
+              <form id="saveCampsiteForm">
                 <div class="input-group input-group">
-                  <input name="add-item" id="camp_site" class="form-control add-item"
+                  <input name="campSiteName" id="camp_site" class="form-control add-item"
                     placeholder="Add Your Adventure Here" />
-                  <a href="#" class="btn btn-primary" type="onclick">Add to List</a>
+                  <button class="btn btn-primary" type="submit">Add Campsite</button>
                 </div>
               </form>
             </div>
           </div>
+
+
           <div class="card">
             <div class="card-body">
               <h4 class="card-title"><b>Gear list</b></h4>
@@ -122,7 +130,8 @@
   </div>
   </div>
 
-  <script src="/index.js"></script>
+  <script src="index.js"></script>
+  <script src="campsaver.js"></script>
 </body>
 
 </html>
