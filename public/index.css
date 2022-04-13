@@ -25,9 +25,9 @@ body {
       width: auto;
   }
 
-  .card-group {
+  /* #card-group {
     display: flex;
-  }
+  } */
 
   .card {
     background-color: #b4b4b4;
