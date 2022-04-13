@@ -7,10 +7,40 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 body{
-    background: #2c3e50;
     overflow: hidden;
 }
+
+video {
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  
+  }
+
+.video-wrapper {
+    /* Telling our absolute positioned video to 
+    be relative to this element */
+    position: relative;
+  
+    /* width: 400px;
+    height: 200px; */
+  
+    /* Will not allow the video to overflow the 
+    container */
+    overflow: hidden;
+  
+    /* Centering the container's content vertically 
+    and horizontally */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .container{
     max-width: 440px;
@@ -18,9 +48,10 @@ body{
     margin: 170px auto;
 }
 
+
 .wrapper{
+    position: relative;
     width: 100%;
-    background: #fff;
     border-radius: 5px;
 }
 
@@ -82,7 +113,7 @@ form .row input:focus{
 }
 
 .wrapper form .pass a{
-    color:#2c3e50;
+    color:#95afc0;
     font-size: 17px;
     text-decoration: none;
 }
@@ -113,7 +144,7 @@ form .button input:hover{
 }
 
 .wrapper form .signup-link a{
-    color:#34495e;
+    color:#95afc0;
     text-decoration: none;
 }
 
