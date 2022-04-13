@@ -104,7 +104,7 @@ geardivList.addEventListener('click', (event) => {
 //         console.log(data)
 //     })
 // })
-})
+// })
 
 //This is for Grocery Card
 const grodivList = document.querySelector('.grolistHolder');
@@ -184,4 +184,5 @@ grodivList.addEventListener('click', (event) => {
 
 // function campplan() {
 //     const plan = document.getElementById("save")
-// }
+//
+}};
