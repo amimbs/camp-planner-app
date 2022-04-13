@@ -112,23 +112,46 @@ app.route('/sign-in')
         };
         bcyrpt.compare(password, foundUser.userpassword, (err, match) => {
             if (match) {
-                //here we can pull the user's first name and display it later
-                req.session.user = foundUser.first_name
-                res.redirect('/dashboard')
+                //gets the user from the db and adds the user data to the session
+                req.session.user = foundUser;
+                res.redirect('/dashboard');
             } else {
-                res.json({ error: 'Incorrect Password' })
+                res.json({ error: 'Incorrect Password' });
             }
         })
     })
 ;
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', async (req, res) => {
     if (req.session.user && req.cookies.user_sid) {
-        res.render('dashboard')
+        const campPlans = await models.camp_plan.findAll( {where: {user_id: req.session.user.id}, raw: true} );
+        res.render('dashboard', {campPlans});
     } else {
         res.redirect('/sign-in')
     }
 });
+
+app.post('/api/saveCampsite', (req, res) =>{
+    console.log('gets here')
+    console.log(req.body)
+    console.log(req.session.user)
+
+    models.camp_plan.create({
+        name: req.body.name,
+        user_id: req.session.user.id
+    }).then((camp_plan) => {
+        console.log('success');
+        return res.status(200).json({name: req.body.name})
+    }).catch(e => {
+        let errors = [];
+        console.log(e)
+        e.errors.forEach((error) => {
+            errors.push(error.message)
+        })
+        return res.status(400).json({ error: errors });
+    })
+});
+
 
 //hook this up to a button
 app.get('/logout', (req, res) => {
