@@ -1,9 +1,5 @@
 // const { application } = require("express");
 
-const divList = document.querySelector('.listHolder');
-const addInput = document.querySelector('#addInput');
-const addBtn = document.querySelector('#addBtn');
-
 //signin-form testing
 const form = document.getElementById('signin-form');
 //////
