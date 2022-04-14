@@ -159,3 +159,12 @@ grodivList.addEventListener('click', (event) => {
         // function campplan() {
         //     const plan = document.getElementById("save")
         //}
+
+
+        //New Adventure button
+        const newad = document.querySelector('#newad');
+
+        newad.addEventListener('click', () => {
+            location.reload();
+        });
+     
