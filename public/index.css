@@ -1,0 +1,254 @@
+body {
+  background: url('https://www.pngkey.com/png/full/488-4883292_trees-forest-treetops-overlay-background-pine-tree-forest.png');
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  align-content: center;
+  background-color: black;
+}
+
+.row.content {
+  height: 450px;
+}
+
+.sidenav {
+  padding: 5px;
+  background-color: #f1f1f1;
+  height: fit-content;
+  background-color: #b4b4b4;
+  margin-top: 5px;
+  border: 2px solid black;
+}
+
+img {
+  height: 10vh;
+  width: auto;
+}
+
+.card-group {
+  display: flex;
+}
+
+.card {
+  background-color: rgb(180, 180, 180);
+  padding: 1.5rem;
+  border: 1px solid rgba(53, 53, 53, 0.363);
+  width: 33%;
+  margin: 3px;
+}
+
+#bio {
+  border: 2px solid black;
+  background-color: rgb(180, 180, 180);
+  padding: 2px;
+}
+
+h1 {
+  border: 2px solid black;
+  background-color: rgb(180, 180, 180);
+  width: min-content;
+}
+
+#newad {
+  margin-bottom: 2px;
+}
+
+/* This is for the Gear List */
+input.addgearBtn[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  transition: border 0.3s linear;
+}
+
+.addgearBtn {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+.gear-btn-icon.remove:before {
+  content: 'X';
+}
+
+.gear-btn-icon.down:before {
+  content: 'DOWN';
+}
+
+.gear-btn-icon.up:before {
+  content: 'UP';
+}
+
+.gearformHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.gearformHolder .col.big {
+  width: 100%;
+}
+
+.gearlistholder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.gearlistholder li:before {
+  content: counter(step-counter);
+  background: #fcac00;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gearlistholder .gear-btn-icon {
+  white-space: nowrap;
+  float: right;
+}
+
+/* This is for the Grocery List */
+input.addgroBtn[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  transition: border 0.3s linear;
+}
+
+.addgroBtn {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+  width: 100%;
+}
+
+.gro-btn-icon.remove:before {
+  content: 'X';
+}
+
+.gro-btn-icon.down:before {
+  content: 'DOWN';
+}
+
+.gro-btn-icon.up:before {
+  content: 'UP';
+}
+
+.groformHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.groformHolder .col.big {
+  width: 100%;
+}
+
+.grolistHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.grolistHolder li:before {
+  content: counter(step-counter);
+  background: #fcac00;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.grolistHolder .gro-btn-icon {
+  white-space: nowrap;
+  float: right;
+}
+
+/* This is for the Camp Site */
+
+input.addcampBtn[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  transition: border 0.3s linear;
+}
+
+.addcampBtn {
+  padding: 5px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+  width: 100%;
+}
+
+.camp-btn-icon.remove:before {
+  content: 'X';
+}
+
+.camp-btn-icon.down:before {
+  content: 'DOWN';
+}
+
+.camp-btn-icon.up:before {
+  content: 'UP';
+}
+
+.campformHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.campformHolder .col.big {
+  width: 100%;
+}
+
+.camplistHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.camplistHolder li:before {
+  content: counter(step-counter);
+  background: #fcac00;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.camplistHolder .camp-btn-icon {
+  white-space: nowrap;
+  float: right;
+}
