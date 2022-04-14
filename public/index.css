@@ -1,5 +1,7 @@
 body {
   background: url('https://www.pngkey.com/png/full/488-4883292_trees-forest-treetops-overlay-background-pine-tree-forest.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .navbar {
