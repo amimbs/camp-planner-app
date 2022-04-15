@@ -24,6 +24,7 @@ app.use(express.static('./public'));
 // this communicates with our database
 const models = require('./models');
 const user = require('./models/user');
+const grocery_list = require('./models/grocery_list');
 
 //Session secret setup
 app.use(cookieParser());
@@ -44,7 +45,7 @@ app.use(
 // this clears the cookeis of the user id in the browser, should the server crash 
 app.use((req, res, next) => {
     if (req.cookies.user_sid && !req.session.user) {
-        res.clearCookie('user_sid');        
+        res.clearCookie('user_sid');
     }
     next();
 });
@@ -52,11 +53,11 @@ app.use((req, res, next) => {
 
 //session checker to check for logged in users woah ok this needs to be completed
 var sessionChecker = (req, res, next) => {
-    if (req.session.user && req.cookies.user_sid) {		
+    if (req.session.user && req.cookies.user_sid) {
         res.redirect('/dashboard');
     } else {
         next();
-    }   
+    }
 }
 
 // get method for each template
@@ -69,7 +70,7 @@ app.get('/', sessionChecker, (req, res) => {
 // routing methods
 app.route('/sign-up')
     .get(sessionChecker, async (req, res) => {
-         return res.render('signUp')
+        return res.render('signUp')
     })
     .post(async (req, res) => {
         const { email, password, first_name, last_name } = req.body;
@@ -98,7 +99,7 @@ app.route('/sign-up')
             })
         })
     })
-;
+    ;
 
 app.route('/sign-in')
     .get(sessionChecker, async (req, res) => {
@@ -120,28 +121,44 @@ app.route('/sign-in')
             }
         })
     })
-;
+    ;
 
 app.get('/dashboard', async (req, res) => {
     if (req.session.user && req.cookies.user_sid) {
-        const campPlans = await models.camp_plan.findAll( {where: {user_id: req.session.user.id}, raw: true} );
-        res.render('dashboard', {campPlans});
+        const campPlans = await models.camp_plan.findAll({ where: { user_id: req.session.user.id }, raw: true });
+        res.render('dashboard', { campPlans });
     } else {
         res.redirect('/sign-in')
     }
 });
 
-app.post('/api/saveCampsite', (req, res) =>{
-    console.log('gets here')
+app.post('/api/saveCampPlan', (req, res) => {
     console.log(req.body)
-    console.log(req.session.user)
-
     models.camp_plan.create({
         name: req.body.name,
         user_id: req.session.user.id
     }).then((camp_plan) => {
         console.log('success');
-        return res.status(200).json({name: req.body.name})
+        let grocery_list = [];
+        req.body.grocery_list.forEach(grocery_item => {
+            grocery_list.push({
+                grocery_item: grocery_item,
+                quantity: 1,
+                camp_plan_id: camp_plan.id
+            });
+        });
+        models.grocery_list.bulkCreate(grocery_list);
+
+        let gear_list = [];
+        req.body.gear_list.forEach(gear_item => {
+            gear_list.push({
+                gear_item: gear_item,
+                quantity: 1,
+                camp_plan_id: camp_plan.id
+            });
+        });
+        models.gear_list.bulkCreate(gear_list);
+        return res.status(200).json({ name: req.body.name })
     }).catch(e => {
         let errors = [];
         console.log(e)
@@ -151,7 +168,6 @@ app.post('/api/saveCampsite', (req, res) =>{
         return res.status(400).json({ error: errors });
     })
 });
-
 
 //hook this up to a button
 app.get('/logout', (req, res) => {

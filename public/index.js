@@ -10,6 +10,7 @@ const planList = document.getElementById('planList');
 const geardivList = document.querySelector('.gearlistholder');
 const addGearInput = document.querySelector('#addGearInput');
 const addGearBtn = document.querySelector('#addGearBtn');
+let gear_list_arr = [];
 
 function gearaddLists() {
     if (addGearInput.value === '') {
@@ -18,7 +19,14 @@ function gearaddLists() {
     } else {
         const gearul = geardivList.querySelector('#gearlist_ul');
         const gearli = document.createElement('li');
+
+        //here is the input
         gearli.innerHTML = addGearInput.value;
+
+        //append to the array
+        gear_list_arr.push(addGearInput.value)
+        //
+
         addGearInput.value = '';
         gearul.appendChild(gearli);
         gearcreateBtn(gearli);
@@ -84,6 +92,7 @@ geardivList.addEventListener('click', (event) => {
 const grodivList = document.querySelector('.grolistHolder');
 const addgroInput = document.querySelector('#addgroInput');
 const addgroBtn = document.querySelector('#addgroBtn');
+let grocery_list_arr = []
 
 function groaddLists() {
     if (addgroInput.value === '') {
@@ -91,7 +100,14 @@ function groaddLists() {
     } else {
         const groul = grodivList.querySelector('#grolist_ul');
         const groli = document.createElement('li');
+
+        //here is the input
         groli.innerHTML = addgroInput.value;
+
+        //append to the array
+        grocery_list_arr.push(addgroInput.value)
+        //
+
         addgroInput.value = '';
         groul.appendChild(groli);
         grocreateBtn(groli);
@@ -152,19 +168,18 @@ grodivList.addEventListener('click', (event) => {
     }
 });
 
-        // This is for the saving adventure button
+// This is for the saving adventure button
 
-        // const savedPage = localstorage.getItem("campplan");
+// const savedPage = localstorage.getItem("campplan");
 
-        // function campplan() {
-        //     const plan = document.getElementById("save")
-        //}
+// function campplan() {
+//     const plan = document.getElementById("save")
+//}
 
 
-        //New Adventure button
-        const newad = document.querySelector('#newad');
+//New Adventure button
+const newad = document.querySelector('#newad');
 
-        newad.addEventListener('click', () => {
-            location.reload();
-        });
-     
+newad.addEventListener('click', () => {
+    location.reload();
+});
