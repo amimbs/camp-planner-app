@@ -34,7 +34,7 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/logout"><span class="glyphicon glyphicon-log-out" id="logout"></span> Login</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out" id="logout"></span>Logout</a></li>
         </ul>
       </div>
     </div>
@@ -55,12 +55,18 @@
 
 
       <div class="col-sm-10 text-left">
-        <h1>Welcome</h1>
-        <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p id="bio">
+          <b>
+            Welcome
+          <hr>
+            <p>Anyone you ask has a different reason for camping. Some like to disconnect from technology and reconnect with nature. Some families go camping to revitalize their relationships, away from all the distractions at home. Many youth organizations teach young people how to build a fire, pitch a tent, or read a compass. Camping means different things to different people.
+            </p>
+          <hr>
+            <p id="whyCamp">
+              So why do you camp?
+            </p>
+          </b>
+        </p>
 
 
         <hr>
@@ -78,8 +84,8 @@
             <form id="saveCampsiteForm">
               <div class="input-group input-group">
                 <input name="campSiteName" id="camp_site" class="form-control add-item"
-                  placeholder="Add Your Adventure Here" />
-                <button class="btn btn-primary" type="submit">Add Plan</button>
+                  placeholder="Add Your Adventure" />
+                <button class="btn btn-primary" id="addPlanBtn" type="submit">Add Plan</button>
               </div>
             </form>
           </div>
@@ -93,7 +99,7 @@
           </div>
           <div class="gearlistholder">
             <ul class="gearlist col-6" id="gearlist_ul">
-              
+              <li>boots</li>
             <!-- <button class="btn-icon up"></button>
                 <button class="btn-icon down"></button>
                 <button class="btn-icon remove"></button> -->
@@ -112,7 +118,7 @@
             <p class="card-text">Add you grocery items here!</p>
             <div class="grolistHolder">
               <ul class="grolist col-6" id="grolist_ul">
-                  
+                <li>boots</li>
               </ul>
             </div>
             <div class="groformHolder">
