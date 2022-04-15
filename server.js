@@ -67,6 +67,10 @@ app.get('/', sessionChecker, (req, res) => {
     res.redirect('sign-in');
 });
 
+app.get('/campsite', (req, res) => {
+    res.render('campsite');
+})
+
 // routing methods
 app.route('/sign-up')
     .get(sessionChecker, async (req, res) => {
