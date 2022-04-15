@@ -1,15 +1,15 @@
-const saveCampsiteForm = document.getElementById('saveCampsiteForm');
+const saveCampPlan = document.getElementById('camp-plan-save');
 
-saveCampsiteForm.addEventListener('submit' , event => {
+saveCampPlan.addEventListener('click', event => {
     event.preventDefault();
-
-    let campSiteName = event.target.campSiteName.value;
-
+    console.log(event)
+    let campSiteName = document.getElementById('camp_site').value;
+    console.log(campSiteName)
     let body = {
-        name: campSiteName
-    }
-
-    fetch('/api/savecampSite', {
+        name: campSiteName, grocery_list: grocery_list_arr, gear_list: gear_list_arr
+    };
+    console.log(body)
+    fetch('/api/saveCampPlan', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -24,4 +24,5 @@ saveCampsiteForm.addEventListener('submit' , event => {
         paragraph.append(anchor);
         plansList.append(paragraph);
     });
-})
+});
+
