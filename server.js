@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Template Engine Config
 app.set('view engine', 'ejs');
+app.set("views", "views")
 
 //static acts on the first instance of index within the public folder
 app.use(express.static('./public'));
@@ -74,7 +75,7 @@ app.get('/campsite', (req, res) => {
 // routing methods
 app.route('/sign-up')
     .get(sessionChecker, async (req, res) => {
-        return res.render('signUp')
+         return res.render('signup')
     })
     .post(async (req, res) => {
         const { email, password, first_name, last_name } = req.body;
@@ -91,8 +92,9 @@ app.route('/sign-up')
                 last_name: last_name
 
             }).then((user) => {
-                console.log('success');
-                return res.redirect('/sign-in');
+                console.log(user);
+                // return res.redirect('/sign-in');
+                return res.status(200).json({ success: true });
             }).catch(e => {
                 let errors = [];
                 console.log(e)
@@ -107,7 +109,7 @@ app.route('/sign-up')
 
 app.route('/sign-in')
     .get(sessionChecker, async (req, res) => {
-        res.render('signIn');
+        res.render('login');
     })
     .post(async (req, res) => {
         const { email, password } = req.body;
@@ -119,7 +121,7 @@ app.route('/sign-in')
             if (match) {
                 //gets the user from the db and adds the user data to the session
                 req.session.user = foundUser;
-                res.redirect('/dashboard');
+                res.json({success: true});
             } else {
                 res.json({ error: 'Incorrect Password' });
             }
