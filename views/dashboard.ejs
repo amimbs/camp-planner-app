@@ -33,9 +33,9 @@
           <li><a href="#">Plans</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <!-- <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul> -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out" id="logout"></span> Login</a></li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -48,7 +48,7 @@
         <h3><u>Saved a trail or campsite</u></h3>
         <% campPlans.forEach(function(plan) { %>
           <p>
-            <a><%= plan.name %></a>
+            <a href="/campsite"><%= plan.name %></a>
           </p>
         <% }); %>
       </div>
@@ -77,9 +77,9 @@
             <p class="card-text">Where would you like to Go?</p>
             <form id="saveCampsiteForm">
               <div class="input-group input-group">
-                <input name="campSiteName" id="camp_site" class="form-control add-item"
+                <input type='text' name="campSiteName" id="camp_site" class="form-control add-item"
                   placeholder="Add Your Adventure Here" />
-                <button class="btn btn-primary" type="submit">Add Plan</button>
+                <!-- <button class="btn btn-primary" type="submit">Add Plan</button> -->
               </div>
             </form>
           </div>
@@ -97,6 +97,7 @@
             <!-- <button class="btn-icon up"></button>
                 <button class="btn-icon down"></button>
                 <button class="btn-icon remove"></button> -->
+
             </ul>
           </div>
           <div class="gearformHolder">
@@ -106,29 +107,43 @@
             </div>
           </div>
         </div>
+
+        <!-- Grocery List Card -->
         <div class="card">
           <div class="card-body">
             <h4 class="card-title"><b>Grocery Items</b></h4>
             <p class="card-text">Add you grocery items here!</p>
             <div class="grolistHolder">
               <ul class="grolist col-6" id="grolist_ul">
+
+                <!-- <button class="btn-icon up"></button>
+                <button class="btn-icon down"></button>
+                <button class="btn-icon remove"></button> -->
                   
               </ul>
             </div>
             <div class="groformHolder">
               <div class="col big">
-                <input type="text" id="addgroInput">
-                <button type="button" id="addgroBtn" class="btn btn-primary">Add Item</button>
+                <form>
+                  <input type="text" id="addgroInput">
+                  <button type="button" id="addgroBtn" class="btn btn-primary">Add Item</button>
+                </form>
               </div>
             </div>
           </div>
         </div>
+
         <hr>
+
         </div>
         <br>
+
+        <!-- Save adventure Button -->
         <div>
-          <button type="button" id="save" class="btn btn-primary btn-md">Save this Adventure</button>
+          <button type="button" id="camp-plan-save" class="btn btn-primary btn-md">Save this Adventure</button>
         </div>
+
+
       </div>
     </div>
   </div>
