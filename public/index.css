@@ -67,7 +67,10 @@ p {
   margin-bottom: 2px;
 }
 
-
+a {
+  font-size: 15px;
+  color: black;
+}
 /* This is for the Gear List */
 input.addgearBtn[type="text"] {
   width: 100%;
