@@ -1,6 +1,6 @@
-const saveCampPlan = document.getElementById('camp-plan-save');
+const campplan = document.
 
-saveCampPlan.addEventListener('click', event => {
+campplan.addEventListener('click', event => {
     event.preventDefault();
     console.log(event)
     let campSiteName = document.getElementById('camp_site').value;
@@ -9,7 +9,7 @@ saveCampPlan.addEventListener('click', event => {
         name: campSiteName, grocery_list: grocery_list_arr, gear_list: gear_list_arr
     };
     console.log(body)
-    fetch('/api/saveCampPlan', {
+    fetch('/api/loadCampPlans', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,8 +23,5 @@ saveCampPlan.addEventListener('click', event => {
         anchor.innerText = data.name;
         paragraph.append(anchor);
         plansList.append(paragraph);
-
-        // anchor.href = models.camp_plan.id
     });
 });
-

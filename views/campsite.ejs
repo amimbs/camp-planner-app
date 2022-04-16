@@ -1,14 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camp Site Plan</title>
+    <title>Not All Who Wander Are Lost!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/246a768374.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-   
-<h1> Hello World</h1>
-   
+
+ <!-- navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img
+                    src="https://img.freepik.com/free-vector/mountain-logo-with-camping-hiking_227744-144.jpg?size=338&ext=jpg">
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Plans</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out" id="logout"></span>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main content -->
+    <div class="flex-grow">
+        <div class="col-12 py-4">
+            <h3 class="text-primary hidden-sm-down">Fixed-Fluid-Fixed <span class="small">(Holy Grail Layout)</span></h3>
+            <h6>Change the width to see the fixed-width side columns.</h6>
+            <p>Wolf moon retro jean shorts chambray sustainable roof party. Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch,
+                mumblecore PBR try-hard kale chips. Brooklyn vinyl lumbersexual bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache. 3 wolf moon hashtag church-key Odd Future. Austin messenger bag normcore, Helvetica
+                Williamsburg sartorial tote bag distillery Portland before they sold out gastropub taxidermy Vice.</p>
+            <p>More sustainable roof party. Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch,
+                mumblecore PBR try-hard kale chips. Brooklyn vinyl lumbersexual bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache. 3 wolf moon hashtag church-key Odd Future. Austin messenger bag normcore, Helvetica
+                Williamsburg sartorial tote bag distillery Portland before they sold out gastropub taxidermy Vice.</p>
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-body mb-2">
+                        <h2 class="text-center text-truncate">Snippets</h2>
+                        <h1 class="text-center">311</h1>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-2">
+                    <div class="card card-body">
+                        <h2 class="text-center text-truncate">Downloads</h2>
+                        <h1 class="text-center">982</h1>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-2">
+                    <div class="card card-body">
+                        <h2 class="text-center text-truncate">Sales</h2>
+                        <h1 class="text-center">112</h1>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-2">
+                    <div class="card card-body">
+                        <h2 class="text-center text-truncate">Questions</h2>
+                        <h1 class="text-center">209</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <%= camp_plan.name %>
+    </div>
+
+    <div>
+        <%= camp_plan %>
+    </div>
+
+
+    <script src="index.js"></script>
+    <script src="campsaver.js"></script>
+    <script src="campPlanDisplay.js"></script>
+
 </body>
+
 </html>
