@@ -152,7 +152,6 @@ app.post('/api/saveCampsite', (req, res) =>{
     })
 });
 
-
 //hook this up to a button
 app.get('/logout', (req, res) => {
     if (req.session.user && req.cookies.user_sid) {
