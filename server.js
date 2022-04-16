@@ -68,8 +68,21 @@ app.get('/', sessionChecker, (req, res) => {
     res.redirect('sign-in');
 });
 
-app.get('/campsite', (req, res) => {
-    res.render('campsite');
+/// we need to DISPLAAAAAAAAAAAAAY
+app.get('/campplan/:id', (req, res) => {
+    let camp_plan_id = req.params.id;
+    models.camp_plan.findOne({
+        where: {
+            id: camp_plan_id
+        },
+        include: [
+            models.gear_list,
+            models.grocery_list
+        ]
+    }).then((camp_plan) => {
+        console.log(camp_plan.toJSON())
+        res.render('campsite', { camp_plan })
+    })
 })
 
 // routing methods

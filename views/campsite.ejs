@@ -41,24 +41,6 @@
         </div>
     </nav>
 
-    <!-- left sidebar -->
-    <div class="container-fluid text-center">
-        <div class="row content">
-    
-          <!-- camp plans need to render here -->
-          <div class="col-sm-2 sidenav" id="plansList">
-            <h3>
-                <u>Saved a trail or campsite</u>
-            </h3>
-                <% campPlans.forEach(function(plan) { %>
-                <p>
-                    <a href="/campsite"><%= plan.name %></a>
-                </p>
-                <% }); %>
-          </div>
-        </div>
-    </div> 
-
     <!-- main content -->
     <div class="flex-grow">
         <div class="col-12 py-4">
@@ -97,6 +79,14 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div>
+        <%= camp_plan.name %>
+    </div>
+
+    <div>
+        <%= camp_plan %>
     </div>
 
 
