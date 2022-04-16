@@ -19,7 +19,7 @@ body {
   padding: 5px;
   background-color: #f1f1f1;
   height: fit-content;
-  background-color: #b4b4b4;
+  background-color: #888888;
   margin-top: 5px;
   border: 2px solid black;
 }
@@ -34,28 +34,39 @@ img {
 }
 
 .card {
-  background-color: rgb(180, 180, 180);
+  background-color: #888888;
   padding: 1.5rem;
   border: 1px solid rgba(53, 53, 53, 0.363);
   width: 33%;
   margin: 3px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
 
 #bio {
   border: 2px solid black;
-  background-color: rgb(180, 180, 180);
+  background-color: #888888;
   padding: 2px;
+  margin-top: 3px;
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 25px; 
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: center;
 }
 
-h1 {
-  border: 2px solid black;
-  background-color: rgb(180, 180, 180);
-  width: min-content;
+#whyCamp {
+  font-size: 35px;
 }
 
 #newad {
   margin-bottom: 2px;
 }
+
 
 /* This is for the Gear List */
 input.addgearBtn[type="text"] {
