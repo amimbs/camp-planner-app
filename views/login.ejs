@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="path/to/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome.min.css">
     <script src="https://kit.fontawesome.com/98b7a6bb52.js" crossorigin="anonymous"></script>
    
     <title>Login Form</title>
@@ -21,21 +21,22 @@
                     <form action="#">
                         <div class="row">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Email or Phone Number" required>
+                            <input type="text" placeholder="Email" id="email" required>
                         </div>
                         <div class="row">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" id="password" required>
                         </div>
                         <div class="pass"><a href="#">Forgot Password?</a></div>
                         <div class="row button">
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Login" id="login-button">
                         </div>
-                        <div class="signup-link" id="signup-link">Not a member?<a href="signup.html">Signup</a> </div>
+                        <div class="signup-link" id="signup-link">Not a member?<a href="sign-up">Signup</a> </div>
                     </form>
                 </div>
             </div>
         </div> 
     </div>  
 </body>
+<script src="/login.js"></script>
 </html>

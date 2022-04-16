@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Camp With Us Signup</title>
+    <link rel="stylesheet" href="signup.css">
 </head>
-
 <body>
-
-    <form action="/sign-up" method="post">
-
-        <div>
-            <input type="register-email" id="register-input" name="email"/>
-            <label class="register-label" for="register-input">Register Email address</label>
-        </div>
-
-        <div>
-            <input type="register-password" id="register-password-input" name="password"/>
-            <label class="register-password-label" for="register-password-input">Register Password</label>
-        </div>
-
-        <div>
-            <input type="register-firstname" id="register-firstname-input" name="first_name"/>
-            <label class="register-firstname-label" for="register-firstname-input">Register First Name</label>
-        </div>
-
-        <div>
-            <input type="register-lastname" id="register-lastname-input" name="last_name"/>
-            <label class="register-lastname-label" for="register-lastname-input">Register Last Name</label>
-        </div>
-
-        <button type="submit" class="signIn-button">Create Account</button>
-
-    </form>
-
+    <div class="wrapper">
+        <h2>Start your adventure</h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="First name" id="first-name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Last name" id="last-name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Enter your email" id="email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Create password" id="password" required>
+            </div>
+            <div class="policy">
+                <input type="checkbox">
+                <h3>I accept all terms & conditions</h3>
+            </div>
+            <div class="input-box button" id="signup-button">
+                <input type="submit" placeholder="Start your adventure" required>
+            </div>
+            <div class="text">
+                <h3>Already have an account with us? <a href="sign-in">Login now</a></h3>
+            </div>
+        </form>
+    </div>
+    
 </body>
-
+<script src="/signup.js"></script>
 </html>
