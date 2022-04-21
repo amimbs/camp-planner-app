@@ -81,7 +81,7 @@ app.get('/campplan/:id', (req, res) => {
         ]
     }).then((camp_plan) => {
         console.log(camp_plan.toJSON())
-        res.render('campsite', { camp_plan })
+        return res.render('campsite', { camp_plan })
     })
 })
 

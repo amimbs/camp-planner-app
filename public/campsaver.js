@@ -24,7 +24,6 @@ saveCampPlan.addEventListener('click', event => {
         paragraph.append(anchor);
         plansList.append(paragraph);
 
-        // anchor.href = models.camp_plan.id
     });
 });
 
